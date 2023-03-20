@@ -1,3 +1,4 @@
+//Data Over Air>>Connectivity
 #include <SoftwareSerial.h>
 #include <WiFi.h>
 
@@ -32,7 +33,7 @@ void loop() {
   btSerial.print(bloodOxygen);
   btSerial.print(" BV:");
   btSerial.println(batteryVoltage);
-
+  
   // Send data to server via WiFi
   if (client.connect(host, port)) {
     String data = "HR=" + String(heartRate) + "&O2=" + String(bloodOxygen) + "&BV=" + String(batteryVoltage);
